@@ -1,0 +1,100 @@
+/* --- 1. 導覽列基礎設定 (背景顏色) --- */
+.navbar.navbar-expand-lg {
+  background-color: #003399 !important; /* 你的藍色 */
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #ffcc00; /* 加入底部黃色線條增加質感 */
+}
+
+/* 標題文字 (小北百貨建工店) */
+.navbar-brand {
+  color: white !important;
+  transition: transform 0.3s ease;
+}
+
+/* 導覽連結文字 */
+.navbar-nav .nav-link {
+  color: white !important;
+  font-weight: 500;
+  text-align: center;
+  transition: color 0.3s ease;
+  padding: 10px 20px !important;
+}
+
+/* --- 2. 滑鼠移過去變黃色 --- */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #ffcc00 !important;
+}
+
+/* --- 3. 手機版平滑滑動動畫 (由上往下滑) --- */
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  opacity: 0;
+}
+
+.navbar-collapse.show {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+}
+
+/* --- 4. 手機版專屬：移除方塊，改用線條區隔 --- */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: #003399; /* 保持跟背景一樣，不要有方塊感 */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* 在導覽項目之間加入淡淡的細線 */
+  .nav-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.15); /* 使用半透明白線 */
+  }
+
+  /* 移除第一個項目的頂部線條，避免重複 */
+  .navbar-nav .nav-item:first-child {
+    border-top: none;
+  }
+
+  /* 讓選單文字在手機版有更多點擊空間 */
+  .nav-link {
+    padding: 15px 0 !important;
+  }
+}
+
+/* 漢堡按鈕顏色 (確保在藍色背景下看得到) */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+
+
+/* 歡迎區塊基礎樣式 */
+.welcome-section {
+  background: rgba(0, 0, 0, 0.4); /* 半透明黑色背景 */
+  border: 2px solid #ffcc00;     /* 黃色邊框 */
+  border-radius: 20px;
+  backdrop-filter: blur(10px);   /* 磨砂玻璃效果 */
+  transition: all 0.4s ease;     /* 動畫平滑度 */
+  cursor: default;
+}
+
+/* 游標移過去時稍微放大且變亮 */
+.welcome-section:hover {
+  transform: scale(1.03);        /* 放大 1.03 倍 */
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 30px rgba(255, 204, 0, 0.2); /* 淡淡的黃色發光 */
+}
+
+/* 彈窗背景微調 */
+.modal-content {
+  border: 2px solid #ffcc00;
+  border-radius: 15px;
+}

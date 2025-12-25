@@ -1,0 +1,100 @@
+
+/* --- 聖誕背景設定 --- */
+.index_all {
+  /* 使用深紅色與深綠色的暗色漸層，很有聖誕節午夜的感覺 */
+  background: linear-gradient(135deg, #0a2e12 0%, #3a0d0d 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 加上一層淡淡的雪花點綴感 (使用背景圖案) */
+.index_all::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- 導覽列微調：聖誕金屬色 --- */
+.my-nav-bg {
+  background-color: rgba(0, 51, 153, 0.85) !important; /* 讓藍色帶一點透明，透出背景色 */
+  backdrop-filter: blur(10px); /* 磨砂玻璃效果 */
+  border-bottom: 3px solid #d4af37 !important; /* 金色邊框線 */
+}
+
+/* 聖誕促銷文字閃爍效果 */
+.text-warning {
+  color: #ffde59 !important;
+  text-shadow: 0 0 10px rgba(255, 222, 89, 0.7);
+  animation: lights 1.5s infinite alternate;
+}
+
+@keyframes lights {
+  from { opacity: 1; }
+  to { opacity: 0.6; }
+}
+
+/* 輪播圖容器加一點陰影，讓它像浮在背景上 */
+.carousel {
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  height: 500px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 300px;
+  }
+}
+
+
+/* GoTop 按鈕樣式 */
+.go-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #d4af37; /* 金屬金色 */
+  color: #fff;
+  border-radius: 50%; /* 圓形 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  font-size: 12px;
+  transition: all 0.3s ease;
+  border: 2px solid #fff;
+}
+
+/* 懸浮效果 */
+.go-top-btn:hover {
+  background-color: #3a0d0d; /* 變回暗紅色 */
+  transform: scale(1.1);
+}
+
+/* 在手機版稍微縮小一點以免擋住內容 */
+@media (max-width: 768px) {
+  .go-top-btn {
+    bottom: 20px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+  }
+}

@@ -1,13 +1,21 @@
 import React from 'react';
 
 function MapSection() {
-  const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.2590212046465!2d120.30873437590203!3d22.644158930335044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e04df77227d89%3A0xc682910795493414!2z5bCP5YyX5百貨LeW7uuefpeW6lw!5e0!3m2!1szh-TW!2stw!4v1700000000000!5m2!1szh-TW!2stw";
-  const googleMapLink = "https://maps.app.goo.gl/9Zp7M6V6vW5wG6Xy8";
+  // --- 修正區域：使用小北百貨建工店的正確地圖資源 ---
+  
+  // 1. mapUrl: 用於 <iframe> 的嵌入式地圖網址
+  // 這是透過 Google Maps 嵌入功能生成的網址，包含座標與店名
+  const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.164539824641!2d120.32289667590861!3d22.64766863025095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e04e96372074f%3A0x7d6560965d9e5046!2z5bCP5YyX6L百貨5bu65bel5bqX!5e0!3m2!1szh-TW!2stw!4v1709100000000!5m2!1szh-TW!2stw";
+  
+  // 2. googleMapLink: 用於按鈕點擊後，在瀏覽器新分頁打開的地圖連結
+  const googleMapLink = "https://www.google.com/maps/search/?api=1&query=小北百貨+高雄建工店";
+  // ----------------------------------------------
 
   return (
     <section className="position-relative overflow-hidden pt-5 mb-5 rounded-4 shadow-lg" style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.1)' }}>
       <div className="container-fluid p-4">
         <div className="row align-items-center gx-5">
+          {/* 左側資訊區 */}
           <div className="col-lg-7 col-12 mb-5 mb-lg-0 text-white">
             <div className="p-4 p-xl-5 bg-dark bg-opacity-50 rounded-4 shadow-lg backdrop-blur">
               <div className="d-flex align-items-center mb-4 justify-content-center">
@@ -46,11 +54,19 @@ function MapSection() {
             </div>
           </div>
 
+          {/* 右側地圖區 */}
           <div className="col-lg-5 col-12">
             <div className="rounded-4 overflow-hidden shadow-lg border border-light-10 bg-dark p-3">
               <h4 className="text-info mb-3"><i className="bi bi-compass me-2"></i>門市定位導航</h4>
               <div className="ratio ratio-4x3 rounded-3 overflow-hidden">
-                <iframe src={mapUrl} style={{ border: 0 }} allowFullScreen="" loading="lazy"></iframe>
+                <iframe 
+                  title="google-map"
+                  src={mapUrl} 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
               <div className="mt-3 text-end">
                 <a href={googleMapLink} target="_blank" rel="noreferrer" className="btn btn-info text-white">

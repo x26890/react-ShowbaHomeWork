@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import './Christmas.css'; // 聖誕節特別樣式
 import Navbar from './components/Navbar';
-import Carousel from './components/Carousel'; 
-import Welcome from './components/Welcome'; 
-import Activity from './components/Activity'; 
-import Footer from './components/Footer'; 
-import GoTop from './components/GoTop'; 
+import Carousel from './components/Carousel';
+import Welcome from './components/Welcome';
+import Activity from './components/Activity';
+import Footer from './components/Footer';
+import GoTop from './components/GoTop';
 import MonthlyDM from './pages/MonthlyDM'; // 引入您新建立的每月DM組件
 import Contact from './pages/Contact';
 
@@ -53,6 +53,11 @@ function Home() {
               將舉辦消費 <span className="text-warning fw-bold fs-2">$399</span> 元
               即可參加一次 <span className="text-info fw-bold">抽抽樂</span> 🎁
             </p>
+            {/* 這裡新增了備註 */}
+            <p className="text-light mb-0" style={{ fontSize: '0.9rem' }}>
+              <small className="opacity-75">* 本活動消費金額不含菸酒 *</small>
+            </p>
+
             <p className="text-light mt-2 fs-5">
               獎品多樣化，快來買~ <span className="badge bg-primary">不買可惜喔！</span>
             </p>
@@ -98,14 +103,14 @@ function Home() {
 // --- App 組件：主路由控管 ---
 function App() {
   return (
-      <Routes>
-        {/* 根目錄顯示首頁內容 */}
-        <Route path="/" element={<Home />} />
-        
-        {/* /monthly-dm 顯示每月DM內容 */}
-        <Route path="/monthly-dm" element={<MonthlyDM />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+    <Routes>
+      {/* 根目錄顯示首頁內容 */}
+      <Route path="/" element={<Home />} />
+
+      {/* /monthly-dm 顯示每月DM內容 */}
+      <Route path="/monthly-dm" element={<MonthlyDM />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
   );
 }
 

@@ -2,10 +2,14 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './assets/all.scss'
-// 核心：加上下面這一行引入
-import { BrowserRouter } from 'react-router-dom'
+// 1. 改成引入 HashRouter
+import { HashRouter } from 'react-router-dom'
+
 createRoot(document.getElementById('root')).render(
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
+  <StrictMode>
+    {/* 2. 使用 HashRouter。注意：HashRouter 不需要設定 basename！ */}
+    <HashRouter>
+      <App />
+    </HashRouter>
+  </StrictMode>
 )

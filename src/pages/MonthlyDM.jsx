@@ -7,12 +7,12 @@ import '../Christmas.css';
 
 function MonthlyDM() {
   const dmCategories = [
-    { id: 1, title: '一匙靈系列專區', imgSrc: './image/DM/DM_5.jpg' }, 
+    { id: 1, title: '會員點數30倍送一匙靈系列專區', imgSrc: './image/DM/DM_5.jpg' }, 
     { id: 2, title: '居家生活百貨', imgSrc: './image/DM/DM_2.jpg' },
     { id: 3, title: '衛生紙、寵物食品專區', imgSrc: './image/DM/DM_3.jpg' },
     { id: 4, title: '得意系列商品專區', imgSrc: './image/DM/DM_4.jpg' },
-    { id: 5, title: '會員點數30倍送', imgSrc: './image/DM/DM_1.jpg' },
-    { id: 6, title: '舒潔商品優惠專區', imgSrc: './image/DM/DM_5.jpg' },
+    { id: 5, title: '一匙靈系列專區', imgSrc: './image/DM/DM_1.jpg' },
+    { id: 6, title: '舒潔商品優惠專區', imgSrc: './image/DM/DM_6.jpg' },
   ];
 
   const [currentDM, setCurrentDM] = useState(dmCategories[0].imgSrc);

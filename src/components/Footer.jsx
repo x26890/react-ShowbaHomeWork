@@ -1,22 +1,27 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom'; // 必須引入這個
 function Footer() {
   return (
     <>
       <footer className="py-5 bg-dark text-light mt-5">
         <div className="container border-bottom">
           <div className="row gy-4">
-            {/* 快速連結 */}
+{/* 快速連結 - 修正為 Link 組件 */}
             <div className="col-lg-4 col-md-4 col-12 mb-4 text-start">
               <h4 className="text-info h5 border-start border-3 border-info ps-2 mb-3">QUICK LINKS</h4>
               <ul className="list-unstyled ps-2">
-                <li className="pb-3"><a href="#" className="link-secondary text-decoration-none">首頁</a></li>
-                <li className="pb-3"><a href="#" className="link-secondary text-decoration-none">最新消息</a></li>
-                <li className="pb-3"><a href="hero.html" className="link-secondary text-decoration-none">門市資訊</a></li>
-                <li className="pb-3"><a href="#" className="link-secondary text-decoration-none">每月DM</a></li>
+                <li className="pb-3">
+                  <Link to="/" className="link-secondary text-decoration-none">首頁</Link>
+                </li>
+                <li className="pb-3">
+                  <Link to="/monthly-dm" className="link-secondary text-decoration-none">每月DM</Link>
+                </li>
+                <li className="pb-3">
+                  <Link to="/contact" className="link-secondary text-decoration-none">關於我們 (聯絡我們)</Link>
+                </li>
               </ul>
             </div>
-
+             
             {/* 資訊區 */}
             <div className="col-lg-4 col-md-4 col-12 mb-4 text-start">
               <h4 className="text-info h5 border-start border-3 border-info ps-2 mb-3 pe-lg-4">INFORMATION</h4>

@@ -1,16 +1,48 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 小北百貨建工店 - 聖誕主題網頁 (React 練習專案) #
 
-Currently, two official plugins are available:
+1. 響應式導覽與路由 (Routing)
+    多頁面結構：使用 react-router-dom 的 HashRouter 實作單頁。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    首頁：定義在 App.jsx 的 Home 組件中。
 
-## React Compiler
+    每月 DM：對應檔案 MonthlyDM.jsx。
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+    聯絡我們：對應檔案 Contact.jsx。
 
-## Expanding the ESLint configuration
+    智慧導覽列：具備響應式折疊功能的 Navbar.jsx，並使用 Link 元件確保頁面切換流暢。
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. 互動式 DM 瀏覽系統
+    分類切換：在 MonthlyDM.jsx 中提供側邊欄分類，點擊可切換展示的 DM 圖片。
+
+    燈箱放大功能：利用 Bootstrap Modal 實作，使用者點擊 DM 圖片即可彈出放大視窗。
+
+3. 關於我們與門市導航
+    視覺化特色介紹：透過 AboutSection.jsx 展示「物美價廉」、「全年無休」、「商品齊全」等核心價值。
+
+    整合地圖資訊：MapSection.jsx 提供了店鋪周邊交通資訊（如紅28、168西公車路線），並內嵌 Google 地圖。
+
+4. 節慶氛圍與用戶體驗 (UX)
+    聖誕視覺樣式：整合 Christmas.css 為網頁增添節日氛圍。
+
+    便利功能：
+
+    GoTop 按鈕：結合 GoTop.jsx 元件 與自定義 useScrollTop.jsx Hook，偵測滾動高度後顯示「回頂部」按鈕。
+
+    LINE 群組串接：透過首頁 Welcome.jsx 與頁尾 Footer.jsx 的 Modal 視窗引導使用者掃描 QR Code。
+
+    最新活動公告：在 Activity.jsx 中以卡片形式展示最新消息與活動。
+
+============================================================================  
+# 關鍵技術 #
+
+前端框架：React
+
+路由管理：React Router DOM (HashRouter)
+
+樣式與架構：Bootstrap 5, CSS
+
+狀態管理：React Hooks (useState, useEffect)
+
+圖示：Bootstrap Icons
